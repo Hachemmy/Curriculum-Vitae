@@ -29,6 +29,15 @@ function App() {
   const timelineRefs = useRef([]);
 
   useEffect(() => {
+    const updateCvScale = () => {
+      const a4WidthInPixels = 794;
+      const scale = Math.min(1, window.innerWidth / a4WidthInPixels);
+      document.documentElement.style.setProperty('--cv-scale', scale);
+    };
+
+    updateCvScale();
+    window.addEventListener('resize', updateCvScale);
+
     timelineRefs.current.forEach((item, index) => {
       if (item) {
         item.style.opacity = '0';
@@ -40,6 +49,8 @@ function App() {
         });
       }
     });
+
+    return () => window.removeEventListener('resize', updateCvScale);
   }, []);
 
   const TL = ({ time, title, badge, desc, idx }) => (
