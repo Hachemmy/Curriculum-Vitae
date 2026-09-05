@@ -31,7 +31,8 @@ function App() {
   useEffect(() => {
     const updateCvScale = () => {
       const a4WidthInPixels = 794;
-      const scale = Math.min(1, window.innerWidth / a4WidthInPixels);
+      const viewWidth = document.documentElement.clientWidth || window.innerWidth;
+      const scale = Math.min(1, viewWidth / a4WidthInPixels);
       document.documentElement.style.setProperty('--cv-scale', scale);
     };
 

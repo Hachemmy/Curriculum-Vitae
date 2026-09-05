@@ -365,14 +365,20 @@ a:hover {
 @media (max-width: 800px) {
     body {
         overflow-x: hidden;
+        background: #52565e;
+        padding: 14px 0;
     }
 
     .cv {
         width: 210mm;
         min-height: 297mm;
         grid-template-columns: 59mm 1fr;
-        margin-left: 0;
-        margin-right: 0;
+        margin: 0 auto;
+        box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+    }
+
+    .sidebar {
+        min-height: 297mm;
     }
 }
 
