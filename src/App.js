@@ -66,12 +66,24 @@ function App() {
     </div>
   );
 
+  const handlePrint = () => {
+    const previousTitle = document.title;
+    const restoreTitle = () => {
+      document.title = previousTitle;
+      window.removeEventListener('afterprint', restoreTitle);
+    };
+
+    document.title = 'CV - Hachemmy Jovenno RAZAFINTIAMASY';
+    window.addEventListener('afterprint', restoreTitle);
+    window.print();
+  };
+
   return (
     <div className="cv-page">
       <div className="print-actions">
-        <button type="button" className="print-button" aria-label="Imprimer le CV" onClick={() => window.print()}>
+        <button type="button" className="print-button" aria-label="Imprimer ou enregistrer le CV en PDF" onClick={handlePrint}>
           <FaPrint aria-hidden="true" />
-          Imprimer le CV
+          Imprimer / PDF
         </button>
       </div>
 
