@@ -41,6 +41,30 @@ a:hover {
     text-decoration: underline;
 }
 
+.print-actions {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+}
+
+.print-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 0;
+    border-radius: 4px;
+    background: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.print-button:hover {
+    background: var(--header-bg);
+}
+
 .cv {
     width: 210mm;
     min-height: 297mm;
@@ -365,16 +389,16 @@ a:hover {
 @media (max-width: 800px) {
     body {
         overflow-x: hidden;
-        background: #52565e;
-        padding: 14px 0;
+        background: var(--white);
+        padding: 0;
     }
 
     .cv {
         width: 210mm;
         min-height: 297mm;
         grid-template-columns: 59mm 1fr;
-        margin: 0 auto;
-        box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+        margin: 0;
+        box-shadow: none;
     }
 
     .sidebar {
@@ -393,13 +417,64 @@ a:hover {
         margin: 0;
         padding: 0;
         background: var(--white);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .print-actions {
+        display: none;
     }
 
     .cv {
         width: 210mm;
+        height: 297mm;
         min-height: 297mm;
+        max-height: 297mm;
         margin: 0;
         zoom: 1;
+        overflow: hidden;
+        page-break-after: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .sidebar,
+    .hero,
+    .language-bar,
+    .language-bar i {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .sidebar {
+        padding-bottom: 0;
+    }
+
+    .sidebar section {
+        margin-bottom: 3mm;
+    }
+
+    .sidebar-photo+section {
+        margin-top: 9mm;
+    }
+
+    .sidebar .contact p {
+        margin: 0.8mm 0;
+    }
+
+    .sidebar li {
+        margin: 0.3mm 0;
+        line-height: 1.16;
+    }
+
+    .language {
+        margin: 1mm 0 1.3mm;
+    }
+
+    .timeline-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 
     .sidebar,
