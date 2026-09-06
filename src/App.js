@@ -99,7 +99,7 @@ function App() {
               <p><FaMapMarkerAlt className="icon-item" /> Tanambao, 301, Fianarantsoa</p>
               <p><FaPhoneAlt className="icon-item" /> +261 38 64 65 898</p>
               <p><FaEnvelope className="icon-item" /> <a href="mailto:hachejoven@gmail.com">hachejoven@gmail.com</a></p>
-              <p><FaLinkedinIn className="icon-item" /> <a href="https://linkedin.com/in/hachemmy-jovenno-32514" target="_blank" rel="noreferrer">linkedin.com/in/hachemmy-jovenno-32514</a></p>
+              <p><FaLinkedinIn className="icon-item" /> <a href="https://www.linkedin.com/in/hachemmy-jovenno-325149420/" target="_blank" rel="noreferrer">linkedin.com/in/hachemmy-jovenno-32514</a></p>
               <p><FaGithub className="icon-item" /> <a href="https://github.com/Hachemmy/" target="_blank" rel="noreferrer">github/Hachemmy/</a></p>
               <p><FaGlobe className="icon-item" /> <a href="https://portfolio-hachemmy.vercel.app" target="_blank" rel="noreferrer">portfolio-hachemmy.vercel.app</a></p>
             </div>
